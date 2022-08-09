@@ -1,0 +1,28 @@
+.single-passenger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    
+}
+
+p {
+    color: rgb(43, 43, 43);
+}
+
+.passenger-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22.5px 50px;
+    background-color: black;
+    max-width: 40px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.passenger-info {
+    
+    width: 25%;
+    background-color: white;
+    padding-left: 10px;
+}

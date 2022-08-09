@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./components/App.css";
+import Passenger from "./components/Passenger";
+const titanicJson = require("./data/titanic-data.json");
+console.log(typeof titanicJson);
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+function App() {
+  return (
+    <div>
+      <div className="title-div">
+        <h1>View Titanic Data</h1>
       </div>
-    );
-  }
+      {titanicJson.map((passenger) => {
+        return <Passenger key={passenger["PassengerId"]} passenger={passenger}></Passenger>;
+      })}
+    </div>
+  );
 }
 
 export default App;
