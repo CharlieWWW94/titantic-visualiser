@@ -1,24 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./components/App.css";
 import Passenger from "./components/Passenger";
 import Search from "./components/search";
 let titanicJson = require("./data/titanic-data.json");
-console.log(typeof titanicJson);
 
 function App() {
   const [relevantPeople, setRelevantPeople] = useState(titanicJson);
-  const [searchItem, setSearchItem] = useState("");
 
   const filterResults = (searchedName) => {
-   let newList = titanicJson.filter(person => person.Name.includes(searchedName));
-    console.log(newList);
+    let newList = titanicJson.filter((person) =>
+      person.Name.includes(searchedName)
+    );
     setRelevantPeople(newList);
   };
 
   const passSearchTerm = (givenSearchTerm) => {
-    setSearchItem(givenSearchTerm);
-    console.log(searchItem);
-    filterResults(searchItem);
+    filterResults(givenSearchTerm);
   };
 
   return (
